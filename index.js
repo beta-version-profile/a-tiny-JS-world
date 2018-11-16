@@ -28,7 +28,7 @@ class Cat extends Alfa {
 }
 
 const catwoman = new Cat('human', 'Jenny', 'woman', 2, 2, 'Hello, world!!!')
-const women = new Alfa('human', 'Lana', 'woman', 2, 2, 'Hello, world!!!') 
+const woman = new Alfa('human', 'Lana', 'woman', 2, 2, 'Hello, world!!!') 
 const cat = new Cat('cat', 'Anna', 'woman', 4, 0, 'meow - meow')
 const man = new Alfa('human', 'Tom', 'man', 2, 2, 'my code works i don\'t know why')
 const dog = new Alfa('dog', 'Toby', 'male', 4, 0, 'woof - woof')
