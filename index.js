@@ -6,7 +6,44 @@
    */
 
 // ======== OBJECTS DEFINITIONS ========
-// Define your objects here
+class Alfa {
+  constructor(species, name, gender, legs, hands, saying) {
+    this.species = species
+    this.legs = legs
+    this.hands = hands
+    this.name = name
+    this.gender = gender
+    this.saying = saying
+  }
+  toSay(){ 
+    print(`species: <strong>${this.species}</strong>; name: <strong>${this.name}</strong>; gender: <strong>${this.gender}</strong>; legs: <strong>${this.legs}</strong>; hands: <strong>${this.hands}</strong>; saying: <strong>${this.saying}</strong>;`
+    )
+  }
+}
+class Cat extends Alfa {
+    constructor(species, name, gender, legs, hands) {
+      super(species, name, gender, legs, hands)
+      this.saying = 'meow - meow'
+    }
+}
+
+const catwoman = new Cat('human', 'Jenny', 'woman', 2, 2, 'Hello, world!!!')
+const women = new Alfa('human', 'Lana', 'woman', 2, 2, 'Hello, world!!!') 
+const cat = new Cat('cat', 'Anna', 'woman', 4, 0, 'meow - meow')
+const man = new Alfa('human', 'Tom', 'man', 2, 2, 'my code works i don\'t know why')
+const dog = new Alfa('dog', 'Toby', 'male', 4, 0, 'woof - woof')
+
+catwoman.toSay()
+dog.toSay()
+cat.toSay()
+man.toSay()
+woman.toSay()
+
+
+
+// ... other objects ...
+// print(dog.species + ';' + dog.name + ';' + dog.gender + ';' + 
+//   dog.legs + ';' + dog.hands + ';' + dog.saying);
 
 
 // ======== OUTPUT ========
