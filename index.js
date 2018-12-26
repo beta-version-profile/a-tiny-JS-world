@@ -1,14 +1,13 @@
 class Parent {
-  constructor(name, gender, kind, hands, legs, say) {
+  constructor(name, gender, kind, legs, say) {
     this.name = name
     this.gender = gender
     this.kind = kind
-    this.hands = hands
     this.legs = legs
     this.say = say
   }
-  printAll() {
-    return Object.keys(this)
+  toString() {
+    return ['name', 'gender', 'kind', 'legs', 'hands', 'say']
       .map(key => {
         return this[key] ? this[key] : 'no'
       })
@@ -18,18 +17,19 @@ class Parent {
 
 class Dog extends Parent {
   constructor(name, gender) {
-    super(name, gender, 'dog', 0, 4, `woof - woof`)
+    super(name, gender, 'dog', 4, `woof - woof`)
   }
 }
 
 class Cat extends Parent {
   constructor(name, gender) {
-    super(name, gender, 'cat', 0, 4, `meow - meow`)
+    super(name, gender, 'cat', 4, `meow - meow`)
   }
 }
 class Human extends Parent {
   constructor(name, gender) {
-    super(name, gender, 'human', 2, 2, `Hello, I'm ${name}`)
+    super(name, gender, 'human', 2, `Hello, I'm ${name}`)
+    this.hands = 2
   }
 }
 
@@ -41,5 +41,5 @@ const specimens = [
 ]
 
 specimens.forEach(obj => {
-  print(obj.printAll())
+  print(obj.toString())
 })
