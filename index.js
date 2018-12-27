@@ -7,7 +7,7 @@ class Parent {
     this.say = say
   }
   get toString() {
-    return Object.keys(this)
+    return ['name', 'gender', 'kind', 'legs', 'say']
       .map(key => {
         return this[key]
       })
@@ -29,9 +29,10 @@ class Cat extends Parent {
 class Human extends Parent {
   constructor(name, gender) {
     super(name, gender, 2, `Hello, I'm ${name}`)
+    this.hands = 2
   }
   get toString() {
-    return `${super.toString}; 2 hands`
+    return `${super.toString}; ${this.hands} hands`
   }
 }
 
