@@ -1,15 +1,15 @@
 class Parent {
-  constructor(name, gender, kind, legs, say) {
+  constructor(name, gender, legs, say) {
     this.name = name
     this.gender = gender
-    this.kind = kind
+    this.kind = this.constructor.name
     this.legs = legs
     this.say = say
   }
-  toString() {
-    return ['name', 'gender', 'kind', 'legs', 'hands', 'say']
+  get toString() {
+    return Object.keys(this)
       .map(key => {
-        return this[key] ? this[key] : 'no'
+        return this[key]
       })
       .join('; ')
   }
@@ -17,19 +17,21 @@ class Parent {
 
 class Dog extends Parent {
   constructor(name, gender) {
-    super(name, gender, 'dog', 4, `woof - woof`)
+    super(name, gender, 4, `woof - woof`)
   }
 }
 
 class Cat extends Parent {
   constructor(name, gender) {
-    super(name, gender, 'cat', 4, `meow - meow`)
+    super(name, gender, 4, `meow - meow`)
   }
 }
 class Human extends Parent {
   constructor(name, gender) {
-    super(name, gender, 'human', 2, `Hello, I'm ${name}`)
-    this.hands = 2
+    super(name, gender, 2, `Hello, I'm ${name}`)
+  }
+  get toString() {
+    return `${super.toString}; 2 hands`
   }
 }
 
@@ -41,5 +43,5 @@ const specimens = [
 ]
 
 specimens.forEach(obj => {
-  print(obj.toString())
+  print(obj.toString)
 })
